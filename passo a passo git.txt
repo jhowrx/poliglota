@@ -1,0 +1,13 @@
+instalar o git para o windows: git-scm.com
+-caso tenha many arguments, colocar entre aspas
+-para criar uma pasta, digitar "mkdir" e o nome da pasta
+-'git init' serve para inicializar o repositório do git
+-'git status' para ver a situação do git
+-git config --local user.name "nick name" para gravar o username
+-git config --local user.email "email..." para gravar o email
+-git config user.name para ver o nome gravado
+-git config user.email para ver o email gravado
+-"git add ." adiciona tudo que estiver na pasta para o repositorio
+-"git rm --cached" para remover
+-git commit -m "texto" para confirmar
+-git remote recove local para cancelar a conecção com o servidor

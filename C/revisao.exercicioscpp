@@ -1,0 +1,64 @@
+//revisao(exercicios).cpp
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]){
+    system ("chcp 1252");
+    
+    //primeiro (;) é declaraçao
+    //segundo (;) é a condição de execução
+    // terceiro (;)é o incremento
+    for (int i=0;i<10;i++){
+        printf("\n%d", i);
+    }
+    
+    int valor = 52;
+    //se valor maior que 50 imprima 'é caro'
+    //senão imprima 'é barato'
+    if (valor > 50){
+        printf("\nÉ caro!!"); 
+    }    
+        else {
+            printf("\nÉ barato!!");
+        }
+  
+  
+  
+    int idade = 116;
+    //se idade <= 12 imprima 'criança'
+    //senão se idade maior que 12 e idade menor ou igual a 29 imprima 'adolescente'
+    //senão se iddade maior que 29 e idade menor que 60 imprima 'meia idade'
+    //senão imprima 'terceira idade'
+    if (idade <= 12){
+        printf("\nÉ criança");
+    }
+    
+        else if (idade > 12 && idade <= 29){
+            printf("\nÉ  adolescente");
+        }
+           
+           else if (idade > 29 &&  idade < 60){ // && significa 'e' ___ || significa 'ou'
+                printf("\nÉ meia idade");
+            }
+                
+                    else if (idade >= 60 && idade < 110){
+                        printf("\nterceira idade");
+                    }
+            
+                else {
+                    printf ("\nFaleceu");
+                } 
+        
+        
+    
+  
+    printf("\n\n");
+    system ("pause");
+    return 0;         
+}
+
+
+
+
+

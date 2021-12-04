@@ -1,0 +1,5 @@
+O C++ foi inicialmente desenvolvido por Bjarne Stroustrup
+dos Bell Labs, durante a década de 1980 com o objetivo
+implementar uma versão distribuída do núcleo Unix.
+Como o Unix era escrito em C, deveria-se manter a compatibilidade,
+ainda que adicionando novos recursos.

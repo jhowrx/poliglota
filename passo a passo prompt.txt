@@ -1,0 +1,17 @@
+PROMPT DE COMANDO 
+C: muda para o driver C
+D:  muda para o driver D
+E:  muda para o driver E
+DIR = lista diretório
+CD = change directory = muda diretrio
+CLS = clear screen = limpa a tela
+MD = make directory = cria diretorio (pasta)
+
+Exemplos:
+D:
+DIR
+D \DIRETORIO1
+DIR
+CD SUBDIRETORIO
+DIR
+

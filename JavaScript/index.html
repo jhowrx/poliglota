@@ -1,0 +1,230 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiulo da página</title>
+
+    <!-- CSS -->
+    <style>
+        #imagem {
+            opacity: 1;
+
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid rgb(36, 24, 90);
+        }
+
+        table.center {
+            width: 400px;
+            height: 100px;
+            margin: auto;
+        }
+
+        footer{
+            text-align: center;
+            background-color: rgb(60, 44, 204);
+            padding: 20px;
+            color: white;
+        }
+
+    </style>
+</head>
+<!--<body onload="autoOpacidade();"> -->
+    <body>  
+    
+   
+
+    <div id='pagina'></div>
+
+    <script>
+
+        var pagina = document.getElementById('pagina');
+        var indiceImagem = 1;
+        // opacidade entre 0 e 1 = 0.1, 0.2, 0.3, 0.4 ... 1
+        var opacidade = 1; // 100% de opacidade => 0% = transparente
+        var reduzir = true;
+        var deslocamento = 0;
+
+        pagina.innerHTML += '<h2>Exemplo for</h2>';
+
+        for (i=0; i<10; i++){
+            pagina.innerHTML += '<h5>' + i + '</h5>'  ;
+        }
+
+        pagina.innerHTML += '<h2>Exemplo do while</h2>';
+        var i =1;
+        do {
+            pagina.innerHTML += '<h5>' + i + '</h5>';
+            i++;
+        } while (i < 5);
+
+        pagina.innerHTML += '<hr>';
+
+        pagina.innerHTML += '<img id="imagem" src="https://softgraf.com/img/img1.jpg" onclick="trocarImagem(); moverImagem()" />';
+
+        
+
+        function trocarImagem(){
+            var objImagem = document.getElementById('imagem');
+            indiceImagem++;
+
+            if (indiceImagem > 7) {
+                indiceImagem = 1;
+            }
+            
+             objImagem.src = "https://softgraf.com/img/img" + indiceImagem + ".jpg";
+
+             mudarOpacidade();
+            
+        }
+        
+        
+    
+        function mudarOpacidade() {
+            // obtém o id da imagem
+            var imagem = document.getElementById('imagem');
+            if(opacidade <= 0.1)
+                reduzir = false;
+            else if (opacidade >= 1)
+                reduzir = true;
+
+            if (reduzir)
+                opacidade -= 0.1; // diminui 10%
+            else
+                opacidade += 0.1;
+            // altera o CSS da imagem
+            imagem.style.opacity = opacidade;
+        }
+
+        function autoOpacidade() {
+            setInterval('mudarOpacidade()', 100);
+        }
+
+        
+        function moverImagem() {
+            var imagem = document.getElementById('imagem');
+            deslocamento += 5; // 5 px
+            imagem.style.marginLeft = deslocamento;
+            if (deslocamento > 1900) {
+                deslocamento = -600;
+                trocarImagem();
+            }
+        }
+
+        function autoDeslocar() {
+            setInterval('moverImagem()', 10); // 10 milisegundos
+        }
+
+        autoDeslocar();
+    </script>
+
+    <hr>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem facilis molestiae assumenda soluta nemo. Debitis, magnam? Nisi impedit perspiciatis amet saepe? Quisquam delectus recusandae soluta officia reprehenderit ducimus minus aliquid. Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ut provident earum officia repellat quibusdam natus. Molestiae, quibusdam quisquam debitis velit vitae nesciunt quos amet. Eligendi totam vitae delectus dicta? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error, et. Asperiores minima nemo sint obcaecati tempora, fugit quibusdam iusto corporis deserunt consectetur debitis earum, temporibus, quo aspernatur laboriosam. Hic, fuga. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ea aperiam quae ipsum ex neque nesciunt cum mollitia, necessitatibus iste quibusdam blanditiis corrupti autem sequi debitis vitae, iusto adipisci accusamus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita itaque facilis beatae? Culpa quisquam officia minus doloribus porro voluptas sapiente molestiae sunt provident, enim eius voluptatem ipsum saepe quos! Exercitationem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque repudiandae labore delectus totam necessitatibus veritatis, accusantium saepe natus nihil autem minus cumque, hic porro nostrum quas a provident? Quidem, earum? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati minima placeat odio. Voluptatibus quibusdam dicta ratione ad, mollitia quidem provident quia cum amet pariatur hic. Quia, quaerat doloribus? Repudiandae, voluptatem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem porro reprehenderit veritatis dignissimos, ut asperiores repellat illo dolore aspernatur nam, molestias quam, error magnam eligendi facilis! Modi non nemo id. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, id provident. Cumque deleniti mollitia dolorum quo, architecto minus dolore modi porro eum a, qui incidunt, quas accusamus voluptatibus error. Ut! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio est alias voluptates ipsa laudantium placeat, beatae quod dolorem numquam dolores nobis possimus quas voluptatem. Impedit omnis amet eveniet adipisci vitae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa totam nemo, quasi magni consequatur reiciendis impedit quam expedita ab veniam voluptatem amet eum omnis doloremque suscipit tenetur accusamus ut praesentium? Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem enim sequi a error at. Veniam distinctio fuga dignissimos et, voluptatibus, at alias adipisci, pariatur cum nesciunt labore rerum modi eligendi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas officiis obcaecati assumenda non eligendi. Facere deleniti nobis iusto quasi expedita ab repellat ut obcaecati officia nostrum, voluptatibus blanditiis praesentium reiciendis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quos ipsum ex, animi nisi quam quod similique ullam rerum est aspernatur quibusdam. Cumque eaque repellendus ea nesciunt ducimus doloribus quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias velit vel impedit assumenda reiciendis dolorem itaque dolores debitis tenetur consectetur officia ullam aliquam at natus neque, iure placeat tempora autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam neque officiis magni iusto, quibusdam optio tenetur vero eveniet non ullam, qui harum ea quos debitis minus blanditiis delectus ipsum? Alias. 
+    </p>
+    <hr>
+
+    <label for="file">Baixando Arquivo... Aguarde...</label>
+
+    <progress id="file" value="32" max="100">32%</progress>
+
+    <ol type="1">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6</li>
+        <li>Item 7</li>
+        <li>Item 8</li>
+        <li>Item 9</li>
+        <li>Item 10</li>
+        <li>Item 11</li>
+        <li>Item 12</li>
+        <li>Item 13</li>
+        <li>Item 14</li>
+        <li>Item 15</li>
+    </ol>
+
+    <!-- Lista não ordenada-->
+    <ul style="list-style-type: square">
+        <li>Café</li>
+        <li>Leite</li>
+        <li>Chá</li>
+    </ul>
+
+    <iframe width="1024" height="630" src="https://www.youtube.com/embed/tjO-qmj_vs0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <hr>
+    <form action="/pagina_destino.php" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome"><br><br>
+
+        <label for="sobrenome">Sobrenome:</label>
+        <input type="text" id="sobrenome" name="sobrenome"><br><br>
+        
+        <input type="submit" value="Enviar">
+    </form>
+        
+    
+    <hr />
+
+    <canvas id = "meuCanvas"></canvas>
+
+    <script>  
+        var canvas = document.getElementById('meuCanvas');
+        var ctx =  canvas.getContext('2d');
+        ctx.fillStyle = 'red';
+        ctx.fillRect(20,20,75,50);
+        //Liga a transparencia
+        ctx.globalAlpha = 0.2;
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(50,50,75,50);
+        ctx.fillStyle = 'green';
+        ctx.fillRect(80,80,75,50);       
+    </script>
+
+    <h1>Exemplo de Tabela</h1> <!--TABELAAAAAAAAAAAAA-->
+    <table class="center">
+      <tr>
+          <th>Mês</th>
+          <th>Recebimento</th>
+          <th>Link</th>
+      </tr>
+      <tr>
+          <td>Janeiro</td>
+          <td>R$ 100</td>
+          <td>
+            <a href="https://watch.nba.com/packages?cid=nba:ilp:paid:sem:sa360:na:eg:acq:sub:dtc-acq:global:dynlan:BR
+            _B_Secondary_General_Portuguese_LI:NBA_Games_Exact:nba:43700067032130964:&ef_id=:G:s&s_kwcid=AL!5120!3!!e!
+            !o!!nba!424142637!1342504920402347&gclid=6f49b8b70be81c75cc94d9228777e835&gclsrc=3p.ds&"
+            target="_blank"
+            >NBA</a>
+          </td>
+
+      </tr>
+      <tr>
+          <td>Fevereiro</td>
+          <td>R$ 100</td>
+          <td>
+              <a href="https://pt.wikipedia.org/wiki/Michael_Jordan"
+              target="_blank"
+              >Michael Jordan</a>
+          </td>
+        </tr>
+    </table>
+
+    <hr />
+
+    <footer>
+        <p>
+            Autor: Valdeci Menon <br />
+            <a href="https://www.softgraf.com/site/" target="-blank"
+            >SOFTGRAF Cursos Avançados</a>
+        </p>
+    </footer>
+
+  </body>
+</html>
